@@ -1,0 +1,222 @@
+:root{
+  --bg: #F5F5F3;
+  --text: #1A1A1A;
+  --text-body: #2C2C2C;
+  --text-muted: #999999;
+  --border: #E8E6E1;
+  --divider: #C8C5C0;
+  --nav-bg: #F5F5F3;
+  --link-underline: #C8C5C0;
+  --transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+}
+
+[data-theme="dark"]{
+  --bg: #171717;
+  --text: #F2F2F0;
+  --text-body: #E4E4E2;
+  --text-muted: #8a8a8a;
+  --border: #2b2b2b;
+  --divider: #3a3a3a;
+  --nav-bg: #171717;
+  --link-underline: #3a3a3a;
+}
+
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{ -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+
+body{
+  background-color: var(--bg);
+  color: var(--text-body);
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.75;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+a{ color: inherit; touch-action: manipulation; }
+
+/* Header */
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+  padding-top: max(24px, env(safe-area-inset-top));
+  padding-left: max(48px, env(safe-area-inset-left));
+  padding-right: max(48px, env(safe-area-inset-right));
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.logo{
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text);
+}
+
+nav{
+  display: flex;
+  gap: 32px;
+}
+
+nav a{
+  font-size: 17px;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--text-muted);
+  border-bottom: 1px solid transparent;
+  padding: 4px 2px;
+  transition: var(--transition);
+}
+
+nav a:hover,
+nav a[aria-current="page"]{
+  color: var(--text);
+  border-bottom-color: var(--link-underline);
+}
+
+/* Main */
+main{
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 22vh 24px 0;
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
+}
+
+.content{
+  width: 100%;
+  max-width: 660px;
+}
+
+.content p{
+  margin: 0 0 26px;
+  color: var(--text-body);
+}
+
+.content p:last-child{
+  margin-bottom: 0;
+}
+
+.placeholder{
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.eyebrow{
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+
+/* Footer */
+footer{
+  padding: 0 24px 48px;
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
+  padding-bottom: max(48px, env(safe-area-inset-bottom));
+  display: flex;
+  justify-content: center;
+}
+
+.footer-inner{
+  width: 100%;
+  max-width: 660px;
+}
+
+.socials{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  list-style: none;
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.socials a{
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.socials a:hover{
+  color: var(--text);
+}
+
+.socials .dot{
+  color: var(--divider);
+}
+
+/* Theme toggle */
+.theme-toggle{
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  appearance: none;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  touch-action: manipulation;
+}
+
+.theme-toggle:hover{
+  color: var(--text);
+}
+
+.theme-toggle svg{
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 600px){
+  body{ font-size: 17px; }
+  main{
+    padding: 16vh 20px 60px;
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
+  header{
+    padding: 18px 20px;
+    padding-top: max(18px, env(safe-area-inset-top));
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
+  .logo{ font-size: 16px; }
+  nav{ gap: 20px; }
+  nav a{ font-size: 16px; }
+}
+
+@media (max-width: 360px){
+  header{ padding: 16px; }
+  nav{ gap: 14px; }
+  .logo{ font-size: 15px; }
+  nav a{ font-size: 15px; }
+}

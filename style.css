@@ -59,8 +59,8 @@ header{
 }
 
 .logo{
-  font-family: 'Great Vibes', cursive;
-  font-size: 30px;
+  font-family: 'Alex Brush', cursive;
+  font-size: 38px;
   font-weight: 400;
   text-decoration: none;
   color: var(--text);
@@ -221,7 +221,7 @@ footer{
     padding-left: max(20px, env(safe-area-inset-left));
     padding-right: max(20px, env(safe-area-inset-right));
   }
-  .logo{ font-size: 26px; }
+  .logo{ font-size: 32px; }
   nav{ gap: 20px; }
   nav a{ font-size: 14px; }
 }
@@ -229,6 +229,6 @@ footer{
 @media (max-width: 360px){
   header{ padding: 16px; }
   nav{ gap: 14px; }
-  .logo{ font-size: 22px; }
+  .logo{ font-size: 28px; }
   nav a{ font-size: 13px; }
 }

@@ -169,27 +169,37 @@ footer{
   right: max(20px, env(safe-area-inset-right));
   bottom: max(16px, env(safe-area-inset-bottom));
   appearance: none;
-  background: none;
-  border: none;
-  color: var(--text-muted);
-  cursor: pointer;
-  width: 44px;
-  height: 44px;
-  padding: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 2px;
+  background-color: var(--nav-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  padding: 4px;
   transition: var(--transition);
   touch-action: manipulation;
 }
 
-.theme-toggle:hover{
+.toggle-icon{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.toggle-icon.active{
+  background-color: var(--border);
   color: var(--text);
 }
 
-.theme-toggle svg{
-  width: 18px;
-  height: 18px;
+.toggle-icon svg{
+  width: 17px;
+  height: 17px;
   stroke: currentColor;
   fill: none;
   stroke-width: 1.6;

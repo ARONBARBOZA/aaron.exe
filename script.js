@@ -7,12 +7,12 @@
   function applyTheme(theme) {
     if (theme === 'dark') {
       root.setAttribute('data-theme', 'dark');
-      sun.style.display = 'block';
-      moon.style.display = 'none';
+      sun.classList.remove('active');
+      moon.classList.add('active');
     } else {
       root.removeAttribute('data-theme');
-      sun.style.display = 'none';
-      moon.style.display = 'block';
+      sun.classList.add('active');
+      moon.classList.remove('active');
     }
   }
 

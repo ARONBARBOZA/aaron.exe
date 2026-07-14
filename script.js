@@ -17,8 +17,7 @@
   }
 
   var stored = localStorage.getItem('theme');
-  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  var initial = stored || (prefersDark ? 'dark' : 'light');
+  var initial = stored || 'dark';
   applyTheme(initial);
 
   toggle.addEventListener('click', function () {

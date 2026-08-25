@@ -8,6 +8,13 @@
   --nav-bg: #F5F5F3;
   --link-underline: #C8C5C0;
   --transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+
+  /* Theme-aware SVG/logo colors: neutral ink for monochrome marks,
+     lightened brand hues for the colored marks so they stay recognizable
+     while guaranteeing contrast against the page background. */
+  --svg-color: #111111;
+  --logo-eigencloud: #1A0C6D;
+  --logo-kgen: #1F3338;
 }
 
 [data-theme="dark"]{
@@ -19,6 +26,10 @@
   --divider: #3a3a3a;
   --nav-bg: #171717;
   --link-underline: #3a3a3a;
+
+  --svg-color: #F5F5F3;
+  --logo-eigencloud: #C4B8FF;
+  --logo-kgen: #8FE0D3;
 }
 
 *, *::before, *::after{
@@ -122,6 +133,50 @@ main{
   color: var(--text);
 }
 
+.logo-row{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px 32px;
+  margin: 20px 0 26px;
+}
+
+.logo-row li{
+  display: flex;
+  align-items: center;
+}
+
+.logo-row img,
+.logo-row svg{
+  height: 24px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Theme-aware logo colors. Monochrome marks use the shared ink color
+   (matches body text contrast); colored marks keep their brand hue in
+   Light Mode and switch to a lighter tint of that hue in Dark Mode. */
+.logo-row svg{
+  color: var(--svg-color);
+  transition: var(--transition);
+}
+
+.logo-row .logo-eigencloud{ color: var(--logo-eigencloud); }
+.logo-row .logo-kgen{ color: var(--logo-kgen); }
+
+/* Ethena's mark is a self-contained circular badge with its own dark
+   gradient fill. In Dark Mode that dark fill sits close in luminance to
+   the page background, so add a faint ring to keep its edge readable
+   without altering the artwork itself. */
+[data-theme="dark"] .logo-row .logo-ethena{
+  outline: 1px solid rgba(245, 245, 243, .4);
+  outline-offset: 1px;
+  border-radius: 50%;
+}
+
 .placeholder{
   color: var(--text-muted);
   font-style: italic;
@@ -133,6 +188,36 @@ main{
   letter-spacing: .08em;
   color: var(--text-muted);
   margin: 0 0 16px;
+}
+
+/* Company row */
+.company-row{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin: -4px 0 0;
+}
+
+.company-row li{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.company-row li:not(:last-child)::after{
+  content: "";
+  width: 1px;
+  height: 12px;
+  background-color: var(--divider);
 }
 
 /* Bucket list */
@@ -270,6 +355,14 @@ footer{
   .logo{ font-size: 32px; }
   nav{ gap: 20px; }
   nav a{ font-size: 13px; }
+  .logo-row{
+    gap: 16px 22px;
+    margin: 16px 0 22px;
+  }
+  .logo-row img{
+    height: 20px;
+    max-width: 96px;
+  }
 }
 
 @media (max-width: 360px){
@@ -277,4 +370,11 @@ footer{
   nav{ gap: 14px; }
   .logo{ font-size: 28px; }
   nav a{ font-size: 12px; }
+  .logo-row{
+    gap: 14px 18px;
+  }
+  .logo-row img{
+    height: 18px;
+    max-width: 84px;
+  }
 }

@@ -4,42 +4,61 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Aaron Barboza</title>
+<meta name="description" content="Backbencher. College dropout. Web3 operator. Builder.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Alex+Brush&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <a class="logo" href="index.html">Aaron Barboza</a>
-    <nav>
-      <a href="work.html">Work</a>
-      <a href="personal.html">Personal</a>
-      <a href="bucket-list.html">Bucket List</a>
-      <a href="https://barboza.substack.com/" target="_blank" rel="noopener">Blogs</a>
+    <button class="logo" id="logoHome" type="button">Aaron Barboza</button>
+    <nav role="tablist" aria-label="Primary">
+      <button class="nav-tab" role="tab" data-tab="work" aria-selected="true" aria-controls="panel-work" id="tab-work">Work</button>
+      <button class="nav-tab" role="tab" data-tab="life" aria-selected="false" aria-controls="panel-life" id="tab-life">Life</button>
+      <button class="nav-tab" role="tab" data-tab="bucket" aria-selected="false" aria-controls="panel-bucket" id="tab-bucket">Bucket List</button>
+      <button class="nav-tab" role="tab" data-tab="writing" aria-selected="false" aria-controls="panel-writing" id="tab-writing">Writing</button>
     </nav>
   </header>
 
   <main>
-    <div class="content">
-    <p class="lead">Hey, I am Aaron. 
-    <p>I was the backbencher every teacher hated, dropped out of college, got into Web3, and somehow built a Web3 agency to six figure ARR.
-      Now I have stepped away from that and I am exploring what comes next, building, learning, travelling and figuring things out along the way.</p>
-    <p>
-      I have never really followed the usual path. Probably not going to start now..</p>
-    </p></div>
+
+    <!-- WORK (markup injected by sections/work.js) -->
+    <section class="tab-panel is-active" id="panel-work" role="tabpanel" aria-labelledby="tab-work"></section>
+    <script src="sections/work.js"></script>
+
+    <!-- LIFE (markup injected by sections/life.js) -->
+    <section class="tab-panel" id="panel-life" role="tabpanel" aria-labelledby="tab-life"></section>
+    <script src="sections/life.js"></script>
+
+    <!-- BUCKET LIST (markup injected by sections/bucket.js) -->
+    <section class="tab-panel" id="panel-bucket" role="tabpanel" aria-labelledby="tab-bucket"></section>
+    <script src="sections/bucket.js"></script>
+
+    <!-- WRITING (markup injected by sections/writing.js) -->
+    <section class="tab-panel" id="panel-writing" role="tabpanel" aria-labelledby="tab-writing"></section>
+    <script src="sections/writing.js"></script>
+
   </main>
 
   <footer>
     <div class="footer-inner">
-      <ul class="socials">
-      <li><a href="https://x.com/Aronbarboza1?s=20" target="_blank" rel="noopener">X</a></li>
-      <li class="dot">&middot;</li>
-    </ul>
+      <p class="connect-label">Let&rsquo;s connect</p>
+      <ul class="socials icon-socials">
+        <li><a href="https://x.com/Aronbarboza1?s=20" target="_blank" rel="noopener" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a></li>
+        <li><a href="#" target="_blank" rel="noopener" aria-label="LinkedIn — add your profile URL">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4.983 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM.5 8.98h8v14.52h-8zM12.5 8.98h7.66v1.98h.11c1.07-1.95 3.68-4 7.58-4C36.5 6.96 38 11.34 38 17.5v6h-8v-5.3c0-2.65-.05-6.05-3.7-6.05-3.7 0-4.27 2.89-4.27 5.87v5.48h-8V8.98z" transform="translate(-.5 -.96) scale(.63)"/></svg>
+        </a></li>
+        <li><a href="mailto:hello@aronbarboza.in" aria-label="Email — update with your address">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="4.5" width="20" height="15" rx="2"/><path d="M3 6.5l9 6.5 9-6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a></li>
+      </ul>
     </div>
   </footer>
 
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
     <span class="toggle-icon" id="iconSun" aria-hidden="true">
       <svg viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="4"></circle>
@@ -60,6 +79,6 @@
     </span>
   </button>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

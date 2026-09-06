@@ -557,13 +557,15 @@ footer{
 @media (max-width: 600px){
   body{ font-size: 14px; }
   header{
+    flex-wrap: wrap;
+    row-gap: 14px;
     padding: 18px 20px;
     padding-top: max(18px, env(safe-area-inset-top));
     padding-left: max(20px, env(safe-area-inset-left));
     padding-right: max(20px, env(safe-area-inset-right));
   }
   .logo{ font-size: 30px; }
-  nav{ gap: 16px; }
+  nav{ width: 100%; gap: 16px; flex-wrap: wrap; }
   .nav-tab{ font-size: 12.5px; }
   .page-wrap{ padding: 56px 20px 60px; padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
   .hero-title{ font-size: 36px; }

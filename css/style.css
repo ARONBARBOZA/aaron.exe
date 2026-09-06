@@ -548,7 +548,8 @@ footer{
 /* Responsive */
 @media (max-width: 860px){
   .hero, .currently{ grid-template-columns: 1fr; gap: 40px; }
-  .hero-photo{ order: -1; max-width: 240px; margin: 0 auto; }
+  .hero-photo-wrap{ order: -1; }
+  .hero-photo{ max-width: 240px; margin: 0 auto; }
   .worked-with{ margin-top: 64px; }
   .section-divider{ margin: 48px 0; }
   .polaroids, .currently-caption{ justify-content: flex-start; }

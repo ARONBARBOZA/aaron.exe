@@ -3,13 +3,25 @@ document.getElementById('panel-work').innerHTML = `
 
         <section class="hero">
           <div class="hero-text">
-            <h1 class="hero-title">Hey, I&rsquo;m Aaron.</h1>
+            <div class="hero-heading-row">
+              <h1 class="hero-title">Hey, I&rsquo;m Aaron.</h1>
+              <div class="hero-photo hero-photo--compact" aria-hidden="true">
+                <div class="hero-photo-frame hero-photo-light">
+                  <img src="pictures/hero-light.jpeg" alt="">
+                  <div class="img-fallback">Add<br><strong>pictures/hero-light.jpg</strong><br><small>portrait</small></div>
+                </div>
+                <div class="hero-photo-frame hero-photo-dark">
+                  <img src="pictures/hero-dark.jpeg" alt="">
+                  <div class="img-fallback">Add<br><strong>pictures/hero-dark.jpg</strong><br><small>portrait</small></div>
+                </div>
+              </div>
+            </div>
             <p class="hero-tagline">Backbencher. College dropout.<br>Web3 operator. Builder.</p>
 
             <div class="hero-body">
               <p>I didn&rsquo;t follow the usual path.<br>
               Fell into Web3, built an agency from scratch,<br>
-              and turned it into six-figure ARR.</p>
+              and turned it into Six fig ARR$.</p>
 
               <p>I lead CX at a leading Web3 project and run a Web3 agency, partnering with some of the best DeFi teams to build engaged communities and deliver exceptional user experiences.</p>
 

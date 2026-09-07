@@ -36,8 +36,11 @@
   var toggle = document.getElementById('themeToggle');
   var sun = document.getElementById('iconSun');
   var moon = document.getElementById('iconMoon');
-  var heroLight = document.querySelector('.hero-photo-frame.hero-photo-light');
-  var heroDark = document.querySelector('.hero-photo-frame.hero-photo-dark');
+  // There are two portrait instances in the DOM (the full-size desktop
+  // photo and the compact mobile avatar beside the heading), so grab all
+  // matching frames rather than just the first.
+  var heroLights = Array.prototype.slice.call(document.querySelectorAll('.hero-photo-frame.hero-photo-light'));
+  var heroDarks = Array.prototype.slice.call(document.querySelectorAll('.hero-photo-frame.hero-photo-dark'));
   var currentTheme = 'dark';
 
   function applyTheme(theme) {
@@ -51,12 +54,10 @@
       sun.classList.add('active');
       moon.classList.remove('active');
     }
-    // Crossfade the hero portrait: pictures/hero-light.jpg in light mode,
+    // Crossfade the hero portrait(s): pictures/hero-light.jpg in light mode,
     // pictures/hero-dark.jpg in dark mode.
-    if (heroLight && heroDark) {
-      heroLight.classList.toggle('is-active', theme !== 'dark');
-      heroDark.classList.toggle('is-active', theme === 'dark');
-    }
+    heroLights.forEach(function (el) { el.classList.toggle('is-active', theme !== 'dark'); });
+    heroDarks.forEach(function (el) { el.classList.toggle('is-active', theme === 'dark'); });
   }
   applyTheme(currentTheme);
 

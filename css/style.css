@@ -174,7 +174,7 @@ main{ flex: 1; }
 
 /* Compact avatar shown beside the heading on mobile only — hidden on
    desktop, where the full-size .hero-photo-wrap portrait is used instead. */
-.hero-photo--compact{
+.hero-photo.hero-photo--compact{
   display: none;
   flex-shrink: 0;
   width: 64px;
@@ -280,11 +280,14 @@ main{ flex: 1; }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  align-content: flex-start;
   gap: 22px 32px;
   margin: 22px 0 0;
 }
 
 .logo-row li{ display: flex; align-items: center; }
+.logo-row li.logo-ethena-lockup{ gap: 12px; }
+.logo-row li.logo-lighter-lockup{ gap: 10px; }
 
 .logo-row svg{
   height: 24px;
@@ -568,7 +571,7 @@ footer{
   /* On mobile the portrait moves up beside "Hey, I'm Aaron" as a small
      avatar instead of the large photo below the heading. */
   .hero-photo-wrap{ display: none; }
-  .hero-photo--compact{ display: block; }
+  .hero-photo.hero-photo--compact{ display: block; }
   .hero-heading-row{ margin-bottom: 4px; }
   .worked-with{ margin-top: 64px; }
   .section-divider{ margin: 48px 0; }
@@ -589,15 +592,17 @@ footer{
   nav{ width: 100%; gap: 16px; flex-wrap: wrap; }
   .nav-tab{ font-size: 12.5px; }
   .page-wrap{ padding: 56px 20px 60px; padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
-  .hero-heading-row{ gap: 12px; }
-  .hero-photo--compact{ width: 52px; max-width: 52px; margin-bottom: 12px; }
+  .hero-heading-row{ gap: 14px; align-items: center; }
+  .hero-photo.hero-photo--compact{ width: 60px; max-width: 60px; margin-bottom: 12px; }
   .hero-title{ font-size: 36px; }
   .hero-tagline{ font-size: 17px; margin-bottom: 22px; }
   .hero-body p{ font-size: 14px; }
   .handwritten-note{ font-size: 22px; margin-top: 30px; }
   .worked-with{ margin-top: 48px; }
-  .logo-row{ gap: 16px 22px; margin-top: 16px; }
+  .logo-row{ gap: 12px 20px; row-gap: 12px; margin-top: 16px; align-content: flex-start; }
   .logo-row svg{ height: 20px; max-width: 96px; }
+  .logo-row li.logo-ethena-lockup{ gap: 8px; }
+  .logo-row li.logo-lighter-lockup{ gap: 8px; }
   .section-divider{ margin: 40px 0; }
   .currently-label{ font-size: 16px; }
   .polaroid{ width: 84px; height: 84px; padding: 5px 5px 12px; }
@@ -614,4 +619,7 @@ footer{
   .nav-tab{ font-size: 11.5px; }
   .hero-title{ font-size: 30px; }
   .hero-tagline{ font-size: 15px; }
+  .hero-heading-row{ gap: 10px; }
+  .hero-photo.hero-photo--compact{ width: 50px; max-width: 50px; margin-bottom: 10px; }
+  .logo-row{ gap: 10px 16px; row-gap: 10px; }
 }

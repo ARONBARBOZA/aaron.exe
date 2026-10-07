@@ -16,7 +16,7 @@ document.getElementById('panel-work').innerHTML = `
                 </div>
               </div>
             </div>
-            <p class="hero-tagline">Backbencher. College dropout. Web3 operator. Builder.</p>
+            <p class="hero-tagline">Backbencher. College dropout. Builder.</p>
 
             <div class="hero-body">
               <p>I didn&rsquo;t follow the usual path. Fell into Web3, built an agency from scratch, and turned it into Six fig ARR$.</p>
